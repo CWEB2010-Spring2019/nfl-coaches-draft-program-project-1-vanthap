@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using static System.Console;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace project1
 {
@@ -13,12 +16,12 @@ namespace project1
             Console.WriteLine("Please press any key to continue");
             Console.ReadLine();
 
-            Player aPlayer = new Player
-            {
-                Name = "Dwayne Haskins",
-                College = "Ohio St.",
-                Cost = string.Format("${0:C}", 26400100)
-            };
+            Player aPlayer = new Player();
+
+            aPlayer.Name = "Dwayne Haskins";
+            aPlayer.College = "Ohio St.";
+            aPlayer.Cost = string.Format("${0:C}", 26400100);
+            
 
             Console.WriteLine(aPlayer.ToString());
             
@@ -27,7 +30,8 @@ namespace project1
 
         public override string ToString()
         {
-            return String.Format("{0} \n, {1} \n, {2} \n, {3} \n", );
+            
+            return string.Format("{0} \n, {1} \n, {2} \n, {3} \n", name, );
         }
 
         class Position
@@ -38,6 +42,10 @@ namespace project1
 
         class Player
         {
+            private string _name;
+            private string _college;
+            private string _cost;
+
             public string Name { get; set; }
             public string College { get; set; }
             public string Cost { get; set; }
