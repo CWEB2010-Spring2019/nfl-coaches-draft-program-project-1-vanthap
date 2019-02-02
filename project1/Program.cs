@@ -13,19 +13,21 @@ namespace project1
             Console.WriteLine("Please press any key to continue");
             Console.ReadLine();
 
-            Player aPlayer = new Player();
-            aPlayer.Name = "Dwayne Haskins";
-            aPlayer.College = "Ohio St.";
-            aPlayer.College = "$26,400,100";
+            Player aPlayer = new Player
+            {
+                Name = "Dwayne Haskins",
+                College = "Ohio St.",
+                Cost = string.Format("${0:C}", 26400100)
+            };
 
-
-
+            Console.WriteLine(aPlayer.ToString());
             
 
+        }
 
-
-
-
+        public override string ToString()
+        {
+            return String.Format("{0} \n, {1} \n, {2} \n, {3} \n", );
         }
 
         class Position
@@ -38,7 +40,11 @@ namespace project1
         {
             public string Name { get; set; }
             public string College { get; set; }
-            public int Cost { get; set; }
+            public string Cost { get; set; }
+            public Player()
+            {
+
+            }
         }
     }
 }
